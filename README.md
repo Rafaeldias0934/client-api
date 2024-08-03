@@ -1,35 +1,27 @@
-# Product Management API
+# Client Management API
 
-Este projeto é uma API RESTful de gerenciamento de clientes construída com Spring Boot. 
-A API permite criar, atualizar, buscar e deletar produtos. A estrutura do projeto segue 
-boas práticas de desenvolvimento, utilizando camadas de serviço, repositório e controladores, 
-bem como tratamento de exceções personalizado.
+This project is a RESTful API for client management built with Spring Boot. The API allows creating, updating, retrieving, and deleting clients. The project structure follows best practices, utilizing service, repository, and controller layers, as well as custom exception handling.
 
-## Funcionalidades
+## Features
 
-- **Criar Cliente**: Adiciona um novo produto ao sistema.
-- **Atualizar Cliente**: Atualiza as informações de um produto existente.
-- **Buscar Cliente por ID**: Retorna as informações de um produto específico.
-- **Deletar Cliente**: Remove um produto do sistema.
+- **Create Client**: Adds a new client to the system.
+- **Update Client**: Updates the information of an existing client.
+- **Get Client by ID**: Retrieves information about a specific client.
+- **Delete Client**: Removes a client from the system.
 
 ## Endpoints
 
-### Criar Produto
+### Create Client
 
 - **URL**: `/clients`
-- **Método HTTP**: `POST`
+- **HTTP Method**: `POST`
 - **Request Body**:
   ```json
   {
-    "name": "Nome do cliente",
+    "name": "Client Name",
     "cpf_cnpj": 111.111.111.11
   }
-  
-#Resposta:
-- Status: `201 CREATED`
-- Body: Clinet created
 
-  
   ### Buscar Produto por ID
   
 - **URL**: `/clients/{id}`
