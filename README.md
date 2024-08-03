@@ -44,13 +44,12 @@ This project is a RESTful API for client management built with Spring Boot. The 
 - **HTTP Method**: `PUT`
 - Path Parameters:
 -  `id`: UUID of the client
-  
-**Request Body**:
-```json
-{
+- **Request Body**:
+  ```json
+  {
   "name": "Updated Client Name",
   "cpf_cnpj": "Updated Client cpf_cnpj"
-}
+  }
 
 ### Delete Client
 -  **URL**: `/clients/{id}`
