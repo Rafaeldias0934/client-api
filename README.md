@@ -28,8 +28,8 @@ This project is a RESTful API for client management built with Spring Boot. The 
 - **HTTP Method**: `GET`
 - Path Parameters:
 -   `id`: UUID do cliente
-  
-- #Response:
+
+#Response:  
   
 -  **Status**: 200 OK
 
@@ -38,7 +38,7 @@ This project is a RESTful API for client management built with Spring Boot. The 
 - **Status**: 404 NOT FOUND
 - **Body**: "not found"
 
-###Update Client
+###  Update Client
 
 - **URL**: `/clients/{id}`
 - **HTTP Method**: `PUT`
@@ -52,8 +52,8 @@ This project is a RESTful API for client management built with Spring Boot. The 
 }
 
 ### Delete Client
--**URL**: `/clients/{id}`
--**HTTP Method**:`DELETE`
+-  **URL**: `/clients/{id}`
+-  **HTTP Method**:`DELETE`
 -Path Parameters:
 -  `id`: UUID of the client
   
@@ -61,5 +61,5 @@ This project is a RESTful API for client management built with Spring Boot. The 
 - **Status**: 200 OK
 - **Body**: "Client deleted successfully."
 
--**Status**: 404 NOT FOUND
--**Body**: "Client not found}"
+-  **Status**: 404 NOT FOUND
+-  **Body**: "Client not found}"
