@@ -54,7 +54,7 @@ This project is a RESTful API for client management built with Spring Boot. The 
 ### Delete Client
 -  **URL**: `/clients/{id}`
 -  **HTTP Method**:`DELETE`
--Path Parameters:
+-  Path Parameters:
 -  `id`: UUID of the client
 
 #### Response:
