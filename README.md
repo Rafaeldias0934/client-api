@@ -29,10 +29,10 @@ This project is a RESTful API for client management built with Spring Boot. The 
 - Parâmetros de Caminho:
 -   `id`: UUID do cliente
   
--Response:
--Status: 200 OK
+- Response
+-  **Status**: 200 OK
 
--Body: Retrieved client
+- **Body**: Retrieved client
 
 -Status: 404 NOT FOUND
 -Body: "not found"
