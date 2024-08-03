@@ -16,12 +16,30 @@ bem como tratamento de exceções personalizado.
 
 ### Criar Produto
 
-- **URL**: `/products`
+- **URL**: `/clients`
 - **Método HTTP**: `POST`
 - **Request Body**:
   ```json
-  {
-    "name": "Nome do Produto",
-    "description": "Descrição do Produto",
-    "price": 99.99
+{
+    "name": "Nome do cliente",
+    "cpf_cnpj": 111.111.111.11
   }
+  
+  #Resposta:
+  - Status: `201 CREATED`
+  - Body: Clinet created
+
+  
+  ### Buscar Produto por ID
+  
+- **URL**: `/clients/{id}`
+- **Método HTTP**: `GET`
+- Parâmetros de Caminho:
+-   `id`: UUID do cliente
+- **Request Body**:
+  ```json
+{
+  "name": "cliente",
+  "id": "id encontrado",
+  "cpf_cnpj": 111.111.111.11
+}
