@@ -31,6 +31,7 @@ This project is a RESTful API for client management built with Spring Boot. The 
   
 -Response:
 -Status: 200 OK
+
 -Body: Retrieved client
 
 -Status: 404 NOT FOUND
