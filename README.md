@@ -25,9 +25,9 @@ bem como tratamento de exceções personalizado.
     "cpf_cnpj": 111.111.111.11
   }
   
-  #Resposta:
-  - Status: `201 CREATED`
-  - Body: Clinet created
+#Resposta:
+- Status: `201 CREATED`
+- Body: Clinet created
 
   
   ### Buscar Produto por ID
