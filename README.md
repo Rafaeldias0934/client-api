@@ -20,7 +20,7 @@ bem como tratamento de exceções personalizado.
 - **Método HTTP**: `POST`
 - **Request Body**:
   ```json
-{
+  {
     "name": "Nome do cliente",
     "cpf_cnpj": 111.111.111.11
   }
@@ -39,7 +39,7 @@ bem como tratamento de exceções personalizado.
 - **Request Body**:
   ```json
   {
-  "name": "cliente",
+  "name": "cliente encontrado",
   "id": "id encontrado",
   "cpf_cnpj": 111.111.111.11
   }
