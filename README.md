@@ -29,7 +29,7 @@ This project is a RESTful API for client management built with Spring Boot. The 
 - Path Parameters:
 -   `id`: UUID do cliente
 
-#  Response:  
+####  Response:  
   
 -  **Status**: 200 OK
 
@@ -57,7 +57,7 @@ This project is a RESTful API for client management built with Spring Boot. The 
 -Path Parameters:
 -  `id`: UUID of the client
 
-# Response:
+#### Response:
 
 - **Status**: 200 OK
 - **Body**: "Client deleted successfully."
