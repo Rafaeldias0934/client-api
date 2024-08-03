@@ -25,38 +25,41 @@ This project is a RESTful API for client management built with Spring Boot. The 
 ### Get Client by ID
   
 - **URL**: `/clients/{id}`
-- **Método HTTP**: `GET`
-- Parâmetros de Caminho:
+- **HTTP Method**: `GET`
+- Path Parameters:
 -   `id`: UUID do cliente
   
-- Response
+- #Response:
+  
 -  **Status**: 200 OK
 
 - **Body**: Retrieved client
 
--Status: 404 NOT FOUND
--Body: "not found"
+- **Status**: 404 NOT FOUND
+- **Body**: "not found"
 
 ###Update Client
--URL: /clients/{id}
--HTTP Method: PUT
--Path Parameters:
+
+- **URL**: `/clients/{id}`
+- **HTTP Method**: `PUT`
+- Path Parameters:
 -  `id`: UUID of the client
-Request Body:
+  
+**Request Body**:
 {
   "name": "Updated Client Name",
   "cpf_cnpj": "Updated Client cpf_cnpj"
 }
 
-###Delete Client
--URL: /clients/{id}
--HTTP Method: DELETE
+### Delete Client
+-**URL**: `/clients/{id}`
+-**HTTP Method**:`DELETE`
 -Path Parameters:
 -  `id`: UUID of the client
--  
--Response:
--Status: 200 OK
--Body: "Client deleted successfully."
+  
+-  Response:
+- **Status**: 200 OK
+- **Body**: "Client deleted successfully."
 
--Status: 404 NOT FOUND
--Body: "Client not found}"
+-**Status**: 404 NOT FOUND
+-**Body**: "Client not found}"
