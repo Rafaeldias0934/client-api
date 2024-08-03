@@ -13,7 +13,7 @@ public class ClientModel implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID idClient;
-    private String bairro;
+    private String name;
     private String cpf_cnpj;
 
     public UUID getIdClient() {
@@ -25,18 +25,18 @@ public class ClientModel implements Serializable {
     }
 
     public String getName() {
-        return bairro;
+        return name;
     }
 
     public void setName(String bairro) {
-        this.bairro = bairro;
+        this.name = bairro;
     }
 
-    public String getCPF_CNPJ() {
+    public String getCpf_cnpj() {
         return cpf_cnpj;
     }
 
-    public void setCPF_CNPJ(String cpf_cnpj) {
+    public void setCpf_cnpj(String cpf_cnpj) {
         this.cpf_cnpj = cpf_cnpj;
     }
 }
