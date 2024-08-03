@@ -28,8 +28,8 @@ public class ClientModel implements Serializable {
         return name;
     }
 
-    public void setName(String bairro) {
-        this.name = bairro;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getCpf_cnpj() {
