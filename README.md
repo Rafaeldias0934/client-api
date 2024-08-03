@@ -38,8 +38,8 @@ bem como tratamento de exceções personalizado.
 -   `id`: UUID do cliente
 - **Request Body**:
   ```json
-{
+  {
   "name": "cliente",
   "id": "id encontrado",
   "cpf_cnpj": 111.111.111.11
-}
+  }
