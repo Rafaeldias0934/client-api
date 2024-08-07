@@ -1,8 +1,11 @@
 package com.example.client_api.models;
 
 import jakarta.persistence.*;
+import org.springframework.data.annotation.CreatedDate;
 
 import java.io.Serializable;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.UUID;
 
 @Entity
@@ -12,16 +15,35 @@ public class ClientModel implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private UUID idClient;
+    @Column (name ="id_client")
+    private UUID id;
     private String name;
-    private String cpf_cnpj;
+    @Column (name ="cpf_cnpj")
+    private String cpfCnpj;
+    @Column(name = "created_at", columnDefinition = "TIMESTAMP",nullable = false)
+    private LocalDateTime createdAt;
 
-    public UUID getIdClient() {
-        return idClient;
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
     }
 
-    public void setIdClient(UUID idClient) {
-        this.idClient = idClient;
+    public LocalDateTime getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(LocalDateTime updatedAt) {
+        this.updatedAt = updatedAt;
+    }
+
+    @Column(name = "updated_at", columnDefinition = "TIMESTAMP",nullable = true)
+    private LocalDateTime updatedAt;
+
+    public UUID getId() {
+        return id;
+    }
+
+    public void setId(UUID id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -32,11 +54,12 @@ public class ClientModel implements Serializable {
         this.name = name;
     }
 
-    public String getCpf_cnpj() {
-        return cpf_cnpj;
+    public String getCpfCnpj() {
+        return cpfCnpj;
     }
 
-    public void setCpf_cnpj(String cpf_cnpj) {
-        this.cpf_cnpj = cpf_cnpj;
+    public void setCpfCnpj(String cpfCnpj) {
+        this.cpfCnpj = cpfCnpj;
     }
+
 }

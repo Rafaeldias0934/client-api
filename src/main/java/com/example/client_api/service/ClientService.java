@@ -7,6 +7,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
@@ -19,6 +21,7 @@ public class ClientService {
     public ClientModel saveClient(ClientRecordDto clientRecordDto) {
         ClientModel clientModel = new ClientModel();
         BeanUtils.copyProperties(clientRecordDto, clientModel);
+        clientModel.setCreatedAt(LocalDateTime.now());
         return repository.save(clientModel);
     }
 
@@ -26,7 +29,7 @@ public class ClientService {
         List<ClientModel> clientsList = repository.findAll();
         if (!clientsList.isEmpty()) {
             for (ClientModel client : clientsList) {
-                UUID id = client.getIdClient();
+                UUID id = client.getId();
             }
         } else {
             return null;
@@ -49,6 +52,7 @@ public class ClientService {
         }
         ClientModel clientModel = updateClientOpt.get();
         BeanUtils.copyProperties(clientRecordDto, clientModel);
+        clientModel.setUpdatedAt(LocalDateTime.now());
         return repository.save(clientModel);
     }
 
