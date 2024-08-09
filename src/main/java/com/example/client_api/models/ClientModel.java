@@ -16,34 +16,21 @@ public class ClientModel implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column (name ="id_client")
-    private UUID id;
+    private UUID idClient;
     private String name;
     @Column (name ="cpf_cnpj")
     private String cpfCnpj;
     @Column(name = "created_at", columnDefinition = "TIMESTAMP",nullable = false)
     private LocalDateTime createdAt;
-
-    public void setCreatedAt(LocalDateTime createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public LocalDateTime getUpdatedAt() {
-        return updatedAt;
-    }
-
-    public void setUpdatedAt(LocalDateTime updatedAt) {
-        this.updatedAt = updatedAt;
-    }
-
     @Column(name = "updated_at", columnDefinition = "TIMESTAMP",nullable = true)
     private LocalDateTime updatedAt;
 
-    public UUID getId() {
-        return id;
+    public UUID getIdClient() {
+        return idClient;
     }
 
-    public void setId(UUID id) {
-        this.id = id;
+    public void setIdClient(UUID idClient) {
+        this.idClient = idClient;
     }
 
     public String getName() {
@@ -60,6 +47,18 @@ public class ClientModel implements Serializable {
 
     public void setCpfCnpj(String cpfCnpj) {
         this.cpfCnpj = cpfCnpj;
+    }
+
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public LocalDateTime getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(LocalDateTime updatedAt) {
+        this.updatedAt = updatedAt;
     }
 
 }

@@ -29,7 +29,7 @@ public class ClientService {
         List<ClientModel> clientsList = repository.findAll();
         if (!clientsList.isEmpty()) {
             for (ClientModel client : clientsList) {
-                UUID id = client.getId();
+                UUID id = client.getIdClient();
             }
         } else {
             return null;
