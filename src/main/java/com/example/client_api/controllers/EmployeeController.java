@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/employee")
 public class EmployeeController {
-    @Autowired
-    private EmployeeRepository employeeRepository;
+   
+    //private EmployeeRepository employeeRepository;
 
     @GetMapping
     public ResponseEntity getAllEmployee() {

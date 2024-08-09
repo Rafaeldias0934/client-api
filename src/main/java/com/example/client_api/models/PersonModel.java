@@ -4,7 +4,6 @@ import jakarta.persistence.*;
 
 import java.io.Serializable;
 import java.util.Date;
-import java.util.UUID;
 
 @Entity
 @Table(name = "PEOPLE")
@@ -13,8 +12,8 @@ public class PersonModel implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id_person", columnDefinition = "BIGINT", nullable = false)
-    private UUID idPerson;
+    @Column(name = "id_person", nullable = false)
+    private Long idPerson;
     @Column(name = "name_person", columnDefinition = "VARCHAR(36)", nullable = false)
     private String PersonName;
     @Column(name = "cpf_cnpj", columnDefinition = "VARCHAR(14)", nullable = false)
@@ -26,11 +25,11 @@ public class PersonModel implements Serializable {
     @Column(name = "date_birth", columnDefinition = "TIMESTAMP", nullable = false)
     private Date birthDate;
 
-    public UUID getIdPerson() {
+    public Long getIdPerson() {
         return idPerson;
     }
 
-    public void setIdPerson(UUID idPerson) {
+    public void setIdPerson(Long idPerson) {
         this.idPerson = idPerson;
     }
 
