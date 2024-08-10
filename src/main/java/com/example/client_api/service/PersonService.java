@@ -8,6 +8,8 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
+import java.util.UUID;
 
 @Service
 @RequiredArgsConstructor
@@ -28,5 +30,13 @@ public class PersonService {
             }
         }
         return personModelList;
+    }
+
+    public PersonModel getOnePerson(Long id) {
+        Optional<PersonModel> getOnePersonOpt = personRepository.findById(id);
+        if (getOnePersonOpt.isEmpty()) {
+            return null;
+        }
+        return getOnePersonOpt.get();
     }
 }
