@@ -2,6 +2,6 @@ package com.example.client_api.dtos;
 
 import java.util.Date;
 
-public record PersonRecordDto(String PersonName, String cpfCnpj, String fatherName, String matherName, Date birthDate) {
+public record PersonRecordDto(String personName, String cpfCnpj, String fatherName, String motherName, Date birthDate) {
 
 }

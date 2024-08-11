@@ -5,7 +5,10 @@ import com.example.client_api.models.PersonModel;
 import com.example.client_api.repositories.PersonRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.BeanUtils;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 import java.util.Optional;
@@ -38,5 +41,15 @@ public class PersonService {
             return null;
         }
         return getOnePersonOpt.get();
+    }
+
+    public PersonModel updatePerson(Long id, PersonRecordDto  personRecordDto) {
+        Optional<PersonModel> updatePersonOpt = personRepository.findById(id);
+        if (updatePersonOpt.isEmpty()) {
+            return null;
+        }
+        PersonModel personModel = updatePersonOpt.get();
+        BeanUtils.copyProperties(personRecordDto,personModel);
+        return personRepository.save(personModel);
     }
 }

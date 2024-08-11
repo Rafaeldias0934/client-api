@@ -15,14 +15,14 @@ public class PersonModel implements Serializable {
     @Column(name = "id_person", nullable = false)
     private Long idPerson;
     @Column(name = "name_person", columnDefinition = "VARCHAR(36)", nullable = false)
-    private String PersonName;
+    private String personName;
     @Column(name = "cpf_cnpj", columnDefinition = "VARCHAR(14)", nullable = false)
     private String cpfCnpj;
     @Column(name = "name_father", columnDefinition = "VARCHAR(36)", nullable = false)
     private String fatherName;
-    @Column(name = "name_mather", columnDefinition = "VARCHAR(36)", nullable = false)
-    private String matherName;
-    @Column(name = "date_birth", columnDefinition = "TIMESTAMP", nullable = false)
+    @Column(name = "name_mother", columnDefinition = "VARCHAR(36)", nullable = false)
+    private String motherName;
+    @Column(name = "date_birth", columnDefinition = "DATE", nullable = false)
     private Date birthDate;
 
     public Long getIdPerson() {
@@ -34,11 +34,11 @@ public class PersonModel implements Serializable {
     }
 
     public String getPersonName() {
-        return PersonName;
+        return personName;
     }
 
     public void setPersonName(String personName) {
-        PersonName = personName;
+        this.personName = personName;
     }
 
     public String getCpfCnpj() {
@@ -57,12 +57,12 @@ public class PersonModel implements Serializable {
         this.fatherName = fatherName;
     }
 
-    public String getMatherName() {
-        return matherName;
+    public String getMotherName() {
+        return motherName;
     }
 
-    public void setMatherName(String matherName) {
-        this.matherName = matherName;
+    public void setMotherName(String motherName) {
+        this.motherName = motherName;
     }
 
     public Date getBirthDate() {

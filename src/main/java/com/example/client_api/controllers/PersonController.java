@@ -13,6 +13,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 @RestController
@@ -36,7 +37,7 @@ public class PersonController {
     public ResponseEntity<Object> getOnePerson(@PathVariable(value = "id") Long id) {
         PersonModel personModel = personService.getOnePerson(id);
         if (personModel == null) {
-            ResponseEntity.status(HttpStatus.NOT_FOUND).body("Person model not found");
+            ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
         return ResponseEntity.status(HttpStatus.OK).body(personModel);
     }
