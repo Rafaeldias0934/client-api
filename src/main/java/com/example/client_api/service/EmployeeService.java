@@ -10,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -33,5 +34,33 @@ public class EmployeeService {
             return null;
         }
         return employeeList;
+    }
+
+    public EmployeeModel getOneEmployee(Long id) {
+        Optional<EmployeeModel> getOneEmployeeOpt = employeeRepository.findById(id);
+        if (getOneEmployeeOpt.isEmpty()) {
+            return null;
+        }
+        return getOneEmployeeOpt.get();
+    }
+
+    public EmployeeModel updateEmployee(Long id, EmployeeRecordDto employeeRecordDto) {
+        Optional<EmployeeModel> updateEmployeeOpt = employeeRepository.findById(id);
+        if (updateEmployeeOpt.isEmpty()) {
+            return null;
+        }
+        EmployeeModel employeeModel = updateEmployeeOpt.get();
+        BeanUtils.copyProperties(employeeRecordDto, employeeModel);
+        return employeeRepository.save(employeeModel);
+    }
+
+    public boolean deleteEmployee(long id) {
+        Optional<EmployeeModel> deleteEmployeeOpt = employeeRepository.findById(id);
+        if (deleteEmployeeOpt.isPresent()) {
+            employeeRepository.delete(deleteEmployeeOpt.get());
+            return true;
+        } else {
+            return false;
+        }
     }
 }
