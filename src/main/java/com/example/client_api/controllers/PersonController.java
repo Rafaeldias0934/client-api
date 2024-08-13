@@ -37,7 +37,7 @@ public class PersonController {
     public ResponseEntity<Object> getOnePerson(@PathVariable(value = "id") Long id) {
         PersonModel personModel = personService.getOnePerson(id);
         if (personModel == null) {
-            ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+            ResponseEntity.status(HttpStatus.NOT_FOUND).body("Id Person not found");
         }
         return ResponseEntity.status(HttpStatus.OK).body(personModel);
     }
@@ -46,7 +46,7 @@ public class PersonController {
                                                @RequestBody @Valid PersonRecordDto personRecordDto) {
         PersonModel personModel = personService.updatePerson(id, personRecordDto);
         if (personModel == null) {
-            return ResponseEntity.status(HttpStatus.OK).body(null);
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Person not found");
         }
         return ResponseEntity.status(HttpStatus.OK).body(personService.updatePerson(id, personRecordDto));
     }
@@ -57,7 +57,7 @@ public class PersonController {
         if (isDeleted) {
             return ResponseEntity.status(HttpStatus.OK).body("Person deleted Successfully");
         }
-        return ResponseEntity.status(HttpStatus.OK).body("Perosn not found");
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Person not found");
     }
 
 

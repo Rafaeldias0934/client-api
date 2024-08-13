@@ -12,6 +12,8 @@ import java.io.Serializable;
 public class EmployeeModel implements Serializable {
     public static final long serialVersionUID = 1L;
     @Id
+    @Column(name = "id_employee", nullable = false)
+    private Long idEmployee;
     @Column(name = "Position_employee", columnDefinition = "VARCHAR(36)", nullable = false)
     private String position;
     @Column(name = "resgistration_number", columnDefinition = "VARCHAR(36)", nullable = false)
