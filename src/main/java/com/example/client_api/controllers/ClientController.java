@@ -29,7 +29,7 @@ public class ClientController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Object> getOneClient(@PathVariable(value = "id") UUID id) {
+    public ResponseEntity<Object> getOneClient(@PathVariable(value = "id") Long id) {
         ClientModel clientModel = service.getOneClient(id);
         if (clientModel == null) {
             return ResponseEntity.status(HttpStatus.OK).body(null);
@@ -38,7 +38,7 @@ public class ClientController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Object> updateClient(@PathVariable(value = "id") UUID id,
+    public ResponseEntity<Object> updateClient(@PathVariable(value = "id") Long id,
                                                @RequestBody @Valid ClientRecordDto clientRecordDto) {
         ClientModel updateClientOpt = service.updateClient(id,clientRecordDto);
         if (updateClientOpt == null) {
@@ -47,7 +47,7 @@ public class ClientController {
         return ResponseEntity.status(HttpStatus.OK).body(service.updateClient(id, clientRecordDto));
     }
     @DeleteMapping("/{id}")
-    public ResponseEntity<Object> deleteClient(@PathVariable(value = "id") UUID id){
+    public ResponseEntity<Object> deleteClient(@PathVariable(value = "id") Long id){
         Boolean isDeleted = service.deleteClient(id);
         if (isDeleted) {
             return ResponseEntity.status(HttpStatus.OK).body("Client deleted Successfully");

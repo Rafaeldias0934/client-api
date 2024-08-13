@@ -15,8 +15,8 @@ public class ClientModel implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column (name ="id_client")
-    private UUID idClient;
+    @Column (name ="id_client", nullable = false)
+    private Long idClient;
     private String name;
     @Column (name ="cpf_cnpj")
     private String cpfCnpj;
@@ -25,11 +25,11 @@ public class ClientModel implements Serializable {
     @Column(name = "updated_at", columnDefinition = "TIMESTAMP",nullable = true)
     private LocalDateTime updatedAt;
 
-    public UUID getIdClient() {
+    public Long getIdClient() {
         return idClient;
     }
 
-    public void setIdClient(UUID idClient) {
+    public void setIdClient(Long idClient) {
         this.idClient = idClient;
     }
 

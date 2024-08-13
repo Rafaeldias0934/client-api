@@ -29,7 +29,7 @@ public class ClientService {
         List<ClientModel> clientsList = repository.findAll();
         if (!clientsList.isEmpty()) {
             for (ClientModel client : clientsList) {
-                UUID id = client.getIdClient();
+                Long id = client.getIdClient();
             }
         } else {
             return null;
@@ -37,7 +37,7 @@ public class ClientService {
         return clientsList;
     }
 
-    public ClientModel getOneClient(UUID id) {
+    public ClientModel getOneClient(Long id) {
         Optional<ClientModel> getOneClientOpt = repository.findById(id);
         if (getOneClientOpt.isEmpty()) {
             return null;
@@ -45,7 +45,7 @@ public class ClientService {
         return getOneClientOpt.get();
     }
 
-    public ClientModel updateClient(UUID id, ClientRecordDto clientRecordDto) {
+    public ClientModel updateClient(Long id, ClientRecordDto clientRecordDto) {
         Optional<ClientModel> updateClientOpt = repository.findById(id);
         if (updateClientOpt.isEmpty()) {
             return null;
@@ -56,7 +56,7 @@ public class ClientService {
         return repository.save(clientModel);
     }
 
-    public boolean deleteClient(UUID id) {
+    public boolean deleteClient(Long id) {
         Optional<ClientModel> deleteClientOpt = repository.findById(id);
         if (deleteClientOpt.isPresent()) {
             repository.delete(deleteClientOpt.get());
