@@ -52,4 +52,14 @@ public class PersonService {
         BeanUtils.copyProperties(personRecordDto,personModel);
         return personRepository.save(personModel);
     }
+
+    public Boolean deletePerson(Long id) {
+        Optional<PersonModel> deletepersonOpt = personRepository.findById(id);
+        if (deletepersonOpt.isPresent()) {
+            personRepository.delete(deletepersonOpt.get());
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
