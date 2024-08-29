@@ -10,6 +10,7 @@ import java.util.UUID;
 
 @Entity
 @Table(name = "CLIENTS")
+@DiscriminatorValue("CLIENTS")
 public class ClientModel implements Serializable {
     private static final long serialVersionUID = 1L;
 
@@ -17,9 +18,13 @@ public class ClientModel implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column (name ="id_client", nullable = false)
     private Long idClient;
+
+
+    @Column (name ="name", nullable = false)
     private String name;
-    @Column (name ="cpf_cnpj")
-    private String cpfCnpj;
+
+    @Column (name ="cpf_CNPJ_Client", nullable = false)
+    private String cpfCNPJClient;
     @Column(name = "created_at", columnDefinition = "TIMESTAMP",nullable = false)
     private LocalDateTime createdAt;
     @Column(name = "updated_at", columnDefinition = "TIMESTAMP",nullable = true)
@@ -41,13 +46,14 @@ public class ClientModel implements Serializable {
         this.name = name;
     }
 
-    public String getCpfCnpj() {
-        return cpfCnpj;
+    public String getCpfCNPJClient() {
+        return cpfCNPJClient;
     }
 
-    public void setCpfCnpj(String cpfCnpj) {
-        this.cpfCnpj = cpfCnpj;
+    public void setCpfCNPJClient(String cpfCNPJClient) {
+        this.cpfCNPJClient = cpfCNPJClient;
     }
+
 
     public void setCreatedAt(LocalDateTime createdAt) {
         this.createdAt = createdAt;

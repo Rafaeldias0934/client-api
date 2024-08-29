@@ -6,17 +6,18 @@ import java.io.Serializable;
 import java.util.Date;
 
 @Entity
-@Table(name = "PEOPLE")
+//@Table(name = "PEOPLE")
+@Table(name = "PEOPLE") // A tabela será definida na classe raiz
+@Inheritance(strategy = InheritanceType.JOINED) // Ou SINGLE_TABLE, se preferir
 public class PersonModel implements Serializable {
     public static final long serialVersionUID = 1L;
-
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_person", nullable = false)
     private Long idPerson;
     @Column(name = "name_person", columnDefinition = "VARCHAR(36)", nullable = false)
     private String personName;
-    @Column(name = "cpf_cnpj", columnDefinition = "VARCHAR(14)", nullable = false)
+    @Column(name = "cpf_cnpj_client", columnDefinition = "VARCHAR(14)", nullable = false)
     private String cpfCnpj;
     @Column(name = "name_father", columnDefinition = "VARCHAR(36)", nullable = false)
     private String fatherName;

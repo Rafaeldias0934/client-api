@@ -1,29 +1,29 @@
 package com.example.client_api.controllers;
 
 import com.example.client_api.dtos.EmployeeRecordDto;
+import com.example.client_api.models.ClientModel;
 import com.example.client_api.models.EmployeeModel;
-import com.example.client_api.repositories.EmployeeRepository;
+import com.example.client_api.repositories.ClientRepository;
+import com.example.client_api.service.ClientService;
 import com.example.client_api.service.EmployeeService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/employee")
 public class EmployeeController {
-   
     private final EmployeeService employeeService;
-
     @PostMapping
     public ResponseEntity<EmployeeModel> saveEmployee(@RequestBody @Valid EmployeeRecordDto employeeRecordDto) {
+        //EmployeeModel savedEmployee = employeeService.saveEmployee(employeeRecordDto);
         return ResponseEntity.status(HttpStatus.CREATED).body(employeeService.saveEmployee(employeeRecordDto));
+        //return ResponseEntity.status(HttpStatus.CREATED).body(employeeService.saveEmployee(employeeRecordDto));
     }
 
     @GetMapping
